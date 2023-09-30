@@ -75,8 +75,7 @@
   * Check if you have received the mail.
 
 * Configure Alerts:
-  * Please check this below video.
-TODO: VIDEO LINK
+  * Please check this video for details : https://www.youtube.com/watch?v=iOzRpL0TKdI
 
 * Test alerts:
   * Get the URL for spring boot application:
