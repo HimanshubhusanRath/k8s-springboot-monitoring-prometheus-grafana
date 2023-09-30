@@ -18,7 +18,8 @@
   * `kubectl apply -f k8s/k8s-components.yml`
 
 * <u>An example of the service monitor to service mapping</u>
-![Screenshot 2023-09-29 at 5.20.56 PM.png](..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2FScreenshot%202023-09-29%20at%205.20.56%20PM.png)
+<img width="1116" alt="Screenshot 2023-09-29 at 5 20 56 PM" src="https://github.com/HimanshubhusanRath/k8s-springboot-monitoring-prometheus-grafana/assets/40859584/13bfb9e1-554e-4be2-87e5-e5ac7284e59f">
+
 
 ### 2. Monitor the Spring Boot application
 * Prometheus:
@@ -52,7 +53,8 @@
   password=rrerfddeerereerr ----> This is not the mail password. This is App password (discussed below)
   timeout=60
   ```
-![Screenshot 2023-09-30 at 7.59.48 PM.png](..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2FScreenshot%202023-09-30%20at%207.59.48%20PM.png)
+<img width="563" alt="Screenshot 2023-09-30 at 7 59 48 PM" src="https://github.com/HimanshubhusanRath/k8s-springboot-monitoring-prometheus-grafana/assets/40859584/85671db1-8c00-4707-8bfa-39d10e4b938a">
+
 
 * <u>NOTE: App Password in Gmail:</u>
   * Log in to gmail
