@@ -1,0 +1,67 @@
+## DEPLOYMENT
+
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource type (Deployment/Service etc.)
+metadata:
+  name: springboot-k8s-app # Name of the application
+
+spec:
+  selector:
+    matchLabels:
+      app: k8s-springboot
+
+      # NOTE: Selector and Label names should be same
+
+  replicas: 3 # Number of replicas which will be created for this deployment
+  template:
+    metadata:
+      labels:
+        app: k8s-springboot
+
+    spec:
+      containers:
+        - name: springboot-k8s-app
+          image: himanshubhusan88/springboot-k8s-app:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8083 # Port which the container is running in the POD
+
+---
+
+## SERVICE
+apiVersion: v1
+kind: Service # Kubernetes resource type (Deployment/Service etc.)
+metadata:
+  name: springboot-k8s-service # Name of the service
+  labels:
+    app: k8s-springboot # Should be same as Label mentioned in 'deployment' yaml
+
+spec:
+  selector:
+    app: k8s-springboot # Should be same as Label mentioned in 'deployment' yaml
+
+  ports:
+    - name: web
+      protocol: TCP
+      port: 8083
+      targetPort: 8083
+
+  type: ClusterIP # Type of the service
+
+---
+
+## SERVICE-MONITOR
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: k8s-springboot-servicemonitor
+  labels:
+    release: main # Label defined in the Prometheus instance. Only those service monitors having label as 'release:main' will be used by Prometheus
+spec:
+  selector:
+    matchLabels:
+      app: k8s-springboot # Label mentioned in the service which will be monitored by this ServiceMonitor (Check service's metadata)
+  endpoints:
+    - port: web # Named port defined in service
+      path: /actuator/prometheus # The path where metrics are exposed
