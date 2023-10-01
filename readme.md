@@ -76,12 +76,6 @@
 
 * Configure Alerts:
   * Please check this video for details : https://www.youtube.com/watch?v=iOzRpL0TKdI
- 
-[![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://www.youtube.com/embed/iOzRpL0TKdI)
-
-[<img src="https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg" width="600" height="300"
-/>](https://www.youtube.com/embed/iOzRpL0TKdI)
-
 
 * Test alerts:
   * Get the URL for spring boot application:
